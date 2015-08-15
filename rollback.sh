@@ -26,3 +26,6 @@ else
     echo "Something goes wrong"
 fi
 
+#exit with error
+exit 1
+
