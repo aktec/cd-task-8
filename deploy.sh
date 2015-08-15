@@ -1,6 +1,7 @@
 #!/bin/bash
 ARIFACT_FILE=$1
 
+echo $ARTIFACT_FILE
 cd ~/CI/task8/taskfolders
 rm -rf ./old/*.tar.gz
 echo "old artifact removed"
