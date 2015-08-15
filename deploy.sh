@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ARTIFACT_FILE=$1
 
 echo $ARTIFACT_FILE
