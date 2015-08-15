@@ -1,0 +1,70 @@
+22:53:33,220 DEBUG [Twiddle] args[0]=-s
+22:53:33,220 DEBUG [Twiddle] args[1]=192.168.122.16:1099
+22:53:33,220 DEBUG [Twiddle] args[2]=-u
+22:53:33,220 DEBUG [Twiddle] args[3]=admin
+22:53:33,220 DEBUG [Twiddle] args[4]=-p
+22:53:33,220 DEBUG [Twiddle] args[5]=xxxx
+22:53:33,220 DEBUG [Twiddle] args[6]=invoke
+22:53:33,220 DEBUG [Twiddle] args[7]=jboss.service:MainDeployer
+22:53:33,220 DEBUG [Twiddle] args[8]=undeploy
+22:53:33,220 DEBUG [Twiddle] args[9]=file:/home/Student/custom/deploy/cdtask.war
+22:53:33,263 DEBUG [SecurityAssociation] Using ThreadLocal: false
+22:53:33,273 DEBUG [Twiddle] Command name: invoke
+22:53:33,282 DEBUG [Twiddle] Command arguments: jboss.service:MainDeployer,undeploy,file:/home/Student/custom/deploy/cdtask.war
+22:53:33,283 DEBUG [Twiddle] command proto type properties: jar:file:/opt/jboss/jboss-as/bin/twiddle.jar!/org/jboss/console/twiddle/commands.properties
+22:53:33,286 DEBUG [Twiddle] Adding command 'jsr77'; proto: org.jboss.console.twiddle.command.JSR77Command@4cc56236
+22:53:33,287 DEBUG [Twiddle] Adding command 'xmbean'; proto: org.jboss.console.twiddle.command.XMBeanCommand@5fd73cf4
+22:53:33,287 DEBUG [Twiddle] Adding command 'info'; proto: org.jboss.console.twiddle.command.InfoCommand@c4983d8
+22:53:33,288 DEBUG [Twiddle] Adding command 'get'; proto: org.jboss.console.twiddle.command.GetCommand@615a1bb5
+22:53:33,289 DEBUG [Twiddle] Adding command 'invoke'; proto: org.jboss.console.twiddle.command.InvokeCommand@634c803d
+22:53:33,290 DEBUG [Twiddle] Adding command 'create'; proto: org.jboss.console.twiddle.command.CreateCommand@373bc99b
+22:53:33,291 DEBUG [Twiddle] Adding command 'setattrs'; proto: org.jboss.console.twiddle.command.SetAttrsCommand@3e1c436b
+22:53:33,291 DEBUG [Twiddle] Adding command 'unregister'; proto: org.jboss.console.twiddle.command.UnregisterCommand@73adf5e1
+22:53:33,292 DEBUG [Twiddle] Adding command 'queryMethod'; proto: org.jboss.console.twiddle.command.QueryMethodCommand@49ac9ae3
+22:53:33,293 DEBUG [Twiddle] Adding command 'listDomains'; proto: org.jboss.console.twiddle.command.ListDomainsCommand@1cd5232c
+22:53:33,294 DEBUG [Twiddle] Adding command 'query'; proto: org.jboss.console.twiddle.command.QueryCommand@774cdfcf
+22:53:33,294 DEBUG [Twiddle] Adding command 'set'; proto: org.jboss.console.twiddle.command.SetCommand@3466afc4
+22:53:33,295 DEBUG [Twiddle] Adding command 'serverinfo'; proto: org.jboss.console.twiddle.command.ServerInfoCommand@1c093b3c
+22:53:33,296 DEBUG [InvokeCommand] processing arguments: jboss.service:MainDeployer,undeploy,file:/home/Student/custom/deploy/cdtask.war
+22:53:33,297 DEBUG [InvokeCommand] query: jboss.service:MainDeployer
+22:53:33,297 DEBUG [InvokeCommand] operation name: undeploy
+22:53:33,297 DEBUG [InvokeCommand] operation arguments: [file:/home/Student/custom/deploy/cdtask.war]
+22:53:33,330 DEBUG [TimedSocketFactory] createSocket, hostAddr: /192.168.122.16, port: 1099, localAddr: null, localPort: 0, timeout: 0
+22:53:33,333 DEBUG [NamingContext] Failed to connect to 192.168.122.16:1099
+javax.naming.CommunicationException: Failed to connect to server /192.168.122.16:1099 [Root exception is javax.naming.ServiceUnavailableException: Failed to connect to server /192.168.122.16:1099 [Root exception is java.net.ConnectException: Connection refused]]
+	at org.jnp.interfaces.NamingContext.getServer(NamingContext.java:359)
+	at org.jnp.interfaces.NamingContext.getServer(NamingContext.java:284)
+	at org.jnp.interfaces.NamingContext.checkRef(NamingContext.java:1798)
+	at org.jnp.interfaces.NamingContext.lookup(NamingContext.java:717)
+	at org.jnp.interfaces.NamingContext.lookup(NamingContext.java:710)
+	at javax.naming.InitialContext.lookup(InitialContext.java:411)
+	at org.jboss.console.twiddle.Twiddle.createMBeanServerConnection(Twiddle.java:251)
+	at org.jboss.console.twiddle.Twiddle.connect(Twiddle.java:269)
+	at org.jboss.console.twiddle.Twiddle.access$300(Twiddle.java:63)
+	at org.jboss.console.twiddle.Twiddle$1.getServer(Twiddle.java:140)
+	at org.jboss.console.twiddle.command.MBeanServerCommand.getMBeanServer(MBeanServerCommand.java:59)
+	at org.jboss.console.twiddle.command.MBeanServerCommand.queryMBeans(MBeanServerCommand.java:66)
+	at org.jboss.console.twiddle.command.InvokeCommand.execute(InvokeCommand.java:283)
+	at org.jboss.console.twiddle.Twiddle.main(Twiddle.java:306)
+Caused by: javax.naming.ServiceUnavailableException: Failed to connect to server /192.168.122.16:1099 [Root exception is java.net.ConnectException: Connection refused]
+	at org.jnp.interfaces.NamingContext.getServer(NamingContext.java:329)
+	... 13 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.jnp.interfaces.TimedSocketFactory.createSocket(TimedSocketFactory.java:97)
+	at org.jnp.interfaces.TimedSocketFactory.createSocket(TimedSocketFactory.java:82)
+	at org.jnp.interfaces.NamingContext.getServer(NamingContext.java:325)
+	... 13 more
+22:53:33,338 DEBUG [TimedSocketFactory] createSocket, hostAddr: /192.168.122.16, port: 5100, localAddr: null, localPort: 0, timeout: 0
+22:53:33,598 ERROR [Twiddle] Exec failed
+javax.management.MalformedObjectNameException: Unterminated key property part
+	at javax.management.ObjectName.construct(ObjectName.java:556)
+	at javax.management.ObjectName.<init>(ObjectName.java:1382)
+	at org.jboss.console.twiddle.command.MBeanServerCommand.queryMBeans(MBeanServerCommand.java:68)
+	at org.jboss.console.twiddle.command.InvokeCommand.execute(InvokeCommand.java:283)
+	at org.jboss.console.twiddle.Twiddle.main(Twiddle.java:306)
