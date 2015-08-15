@@ -30,5 +30,6 @@ if [ $(curl -s -I -L http://192.168.122.16:9090/cdtask/  | grep HTTP/1.1 | awk {
 then
 	echo "success!"
 else
+	cd /home/Student/CI/task8/taskfolders/predeploy
 	bash ./rollback.sh	
 fi
