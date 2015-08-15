@@ -26,6 +26,6 @@ else
     echo "Something goes wrong"
 fi
 
-#exit with error
+#exit with error. It marks deploy job in jenkins as failured
 exit 1
 
