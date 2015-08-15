@@ -5,7 +5,7 @@ echo $ARTIFACT_FILE
 cd ~/CI/task8/taskfolders
 rm -rf ./old/*
 echo "old artifact removed"
-mv "./current/$ARTIFACT_FILE" ./old/
+mv ./current/*.tar.gz ./old/
 echo "currend aftifact saved into old"
-mv "./predeploy/$ARTIFACT_FILE" ./current/
+mv ./predeploy/*.tar.gz ./current/
 echo "new artifact saved"
