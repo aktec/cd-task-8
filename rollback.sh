@@ -5,7 +5,7 @@ cd /home/Student/CI/task8/taskfolders
 	
 rm -rf ./current/*
 	
-mv ./old/*.tar.gz ./current/
+cp ./old/*.tar.gz ./current/
 echo "old aftifact restored"
 
 cd ./dist
