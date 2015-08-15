@@ -12,7 +12,7 @@ mv ./predeploy/*.tar.gz ./current/
 echo "new artifact saved"
 
 cd ./dist
-tar -zxvf ../current/*.tar.gz\
+tar -zxvf ./current/*.tar.gz\
 echo "current artifact unpacking"
 
 rm -rf ~/custom/deploy/cdtask.war/*
